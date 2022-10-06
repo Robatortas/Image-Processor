@@ -29,14 +29,6 @@ public class ImageLoader {
 		image.getRGB(0, 0, w, h, pixels, 0, w);
 	}
 	
-//	public void load() {
-//		for(int y = 0; y < height; y++) {
-//			for(int x = 0; x < width; x++) {
-//				
-//			}
-//		}
-//	}
-	
 	
 	// GETTERS AND SETTERS!
 	
