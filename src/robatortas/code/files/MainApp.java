@@ -12,7 +12,12 @@ package robatortas.code.files;
  */
 public class MainApp {
 
+	static String title = "Image Processor";
+	static int width = 720;
+	static int height = 520;
+	
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
+		Logger.log("Starting Program...");
+		new Display(width, height, title);
 	}
 }
