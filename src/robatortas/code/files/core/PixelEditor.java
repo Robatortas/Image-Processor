@@ -1,4 +1,4 @@
-package robatortas.code.files;
+package robatortas.code.files.core;
 
 /**<NEWLINE>
  * <b>PixelEditor class</b>

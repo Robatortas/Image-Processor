@@ -1,16 +1,16 @@
 package robatortas.code.files;
 
-import java.awt.Canvas;
-import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 
-public class Renderer extends Canvas {
-	private static final long serialVersionUID = 1L;
+public class Renderer {
 	
-	private ImageLoader imageLoader;
+	private BufferedImage image;
 	
 	public void render() {
-		// TODO: RENDER IMAGE ON WINDOW!!
-		Graphics g;
-		g.drawImage(imageLoader.getImageFromSource("ducks.png"), 0, 0, imageLoader.getWidth(), imageLoader.getHeight(), null);
+		
+	}
+	
+	public BufferedImage getImage() {
+		return this.image;
 	}
 }

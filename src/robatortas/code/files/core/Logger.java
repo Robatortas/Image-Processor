@@ -1,8 +1,8 @@
-package robatortas.code.files;
+package robatortas.code.files.core;
 
 public class Logger {
 
-	private static String sender = "[PROGRAM]:";
+	private static String sender = "[PROGRAM]: ";
 	
 	/**<NEWLINE>
 	 * <b>log function in Logger class</b>

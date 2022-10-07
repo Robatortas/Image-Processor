@@ -1,4 +1,4 @@
-package robatortas.code.files;
+package robatortas.code.files.core;
 
 @FunctionalInterface
 public interface CustFunc<T> {

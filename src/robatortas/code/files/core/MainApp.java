@@ -1,4 +1,4 @@
-package robatortas.code.files;
+package robatortas.code.files.core;
 
 /**<NEWLINE>
  * <b>MainApp class</b>
@@ -14,13 +14,9 @@ package robatortas.code.files;
  *
  */
 public class MainApp {
-
-	static String title = "Image Processor";
-	static int width = 720;
-	static int height = 520;
 	
 	public static void main(String[] args) {
 		Logger.log("Starting Program...");
-		new Display(width, height, title);
+		new Driver();
 	}
 }

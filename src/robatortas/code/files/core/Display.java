@@ -1,4 +1,4 @@
-package robatortas.code.files;
+package robatortas.code.files.core;
 
 import java.awt.Dimension;
 
@@ -14,9 +14,8 @@ public class Display {
 	 * To create a new window.
 	 * 
 	 */
-	Renderer renderer = new Renderer();
 	
-	public Display(int width, int height, String title) {
+	public Display(int width, int height, String title, Driver driver) {
 		
 		Dimension size = new Dimension(width, height);
 		
@@ -24,9 +23,8 @@ public class Display {
 		frame.setSize(size);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
-		renderer.render();
+		frame.add(driver.getPainter());
 		frame.setVisible(true);
-		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }

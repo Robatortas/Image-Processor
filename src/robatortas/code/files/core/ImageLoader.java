@@ -1,4 +1,4 @@
-package robatortas.code.files;
+package robatortas.code.files.core;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -9,9 +9,11 @@ public class ImageLoader {
 
 	private int[] pixels;
 	private int width, height;
+	private BufferedImage image;
 	
-	public BufferedImage getImageFromSource(String path) {
+	public BufferedImage loadImageFromSource(String path) {
 		BufferedImage image = null;
+		this.image = image;
 		try {
 			image = ImageIO.read(ImageLoader.class.getResource(path));
 			Logger.log("Image at: " + path + " found!");
@@ -19,6 +21,7 @@ public class ImageLoader {
 			Logger.logError("Unable to read the image in the specified location of: " + path + "\n\n");
 			Logger.logJVMError(e);
 		}
+		
 		return image;
 	}
 	
