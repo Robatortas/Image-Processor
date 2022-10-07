@@ -17,6 +17,8 @@ public class PixelEditor {
 	* To loop through the pixels array.
 	* 
 	* @param function Generic Function that iterates through the x & y loop.
+	* 
+	* @see CustFunc
 	*/
 	public void looper(CustFunc function) {
 		for(int y = 0; y < imageLoader.getHeight(); y++) {
