@@ -62,7 +62,6 @@ public class Painter extends JPanel {
 	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		Graphics2D g2d = (Graphics2D) g.create();
 		
 		// Function that tells what to render
 		renderer.render(g);

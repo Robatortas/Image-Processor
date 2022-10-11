@@ -5,6 +5,13 @@ import java.awt.image.BufferedImage;
 
 import robatortas.code.files.core.Driver;
 
+/**<NEWLINE>
+ * <b>Renderer class</b>
+ * <br><br>
+ * Tells the Painter class what should be rendered
+ * 
+ * @see robatortas.code.files.core.Painter
+ */
 public class Renderer {
 	
 	private BufferedImage image;
@@ -15,6 +22,13 @@ public class Renderer {
 		this.driver = driver;
 	}
 	
+	/**<NEWLINE>
+	 * <b>render function in Renderer class</b>
+	 * <br><br>
+	 * Here goes what should be rendered.
+	 * 
+	 * @param g The Graphics class in java
+	 */
 	public void render(Graphics g) {
 		image = driver.imageLoader.loadImageFromSource("/ducks.png");
 		int w = image.getWidth();
