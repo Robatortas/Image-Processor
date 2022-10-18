@@ -33,6 +33,7 @@ public class Display {
 		frame.setSize(size);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
+		frame.add(driver);
 		frame.add(driver.getPainter());
 		driver.start();
 		frame.setVisible(true);

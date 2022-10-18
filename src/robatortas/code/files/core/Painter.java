@@ -1,9 +1,10 @@
 package robatortas.code.files.core;
 
+import java.awt.Canvas;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
+import java.awt.image.BufferStrategy;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import robatortas.code.files.Renderer;
@@ -29,6 +30,10 @@ public class Painter extends JPanel {
 	
 	private Renderer renderer;
 	
+	private MouseManager mouseManager;
+	
+	private Canvas canvas;
+	
 	/**<NEWLINE>
 	 * <b>Painter function in Painter class</b>
 	 * <br><br>
@@ -41,10 +46,15 @@ public class Painter extends JPanel {
 	 * @see Driver
 	 */
 	public Painter(int width, int height, Driver driver) {
+		this.canvas = new Canvas();
 		this.driver = driver;
 		this.width = width;
 		this.height = height;
 		this.renderer = new Renderer(driver);
+		
+		mouseManager = new MouseManager();
+		addMouseListener(mouseManager);
+		addMouseMotionListener(mouseManager);
 	}
 	
 	public ImageLoader imageLoader;
@@ -62,6 +72,11 @@ public class Painter extends JPanel {
 	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		BufferStrategy bs = canvas.getBufferStrategy();
+		if(bs == null) {
+			canvas.createBufferStrategy(3);
+			return;
+		}
 		
 		// Function that tells what to render
 		renderer.render(g);

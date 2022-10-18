@@ -20,13 +20,12 @@ public class Driver extends Canvas implements Runnable {
 	private boolean running = false;
 	
 	public Driver() {
-		imageLoader = new ImageLoader();
-		painter = new Painter(width, height, this);
-		mouseManager = new MouseManager();
-		display = new Display(width, height, title, this);
 		
-		addMouseListener(mouseManager);
-		addMouseMotionListener(mouseManager);
+		painter = new Painter(width, height, this);
+		display = new Display(width, height, title, this);
+		imageLoader = new ImageLoader();
+		
+		
 	}
 	
 	public synchronized void start() {
@@ -45,10 +44,40 @@ public class Driver extends Canvas implements Runnable {
 		running = false;
 	}
 	
+	// Timer
+	public static int fps;
+	private static int ticks = 0;
+	public static boolean vSync = false;	
+	public static int tickCount = 0;
+	public static double tps = 60.0;
+	public static double delta = 0;
+	
 	public void run() {
-		while(running) {
-			Logger.log(Boolean.toString(mouseManager.mousePressed));
-		}
+//		long lastTime = System.nanoTime();
+//		long timer = System.currentTimeMillis();
+//		//converts nanoseconds to milliseconds
+//		final double ns = 1000000000.0 / tps;
+//		double delta = 0;
+//		
+//		while(running) {
+//			long now = System.nanoTime();
+//			delta += (now - lastTime) / ns;
+//			lastTime = now;
+//			while (delta >= 1) {
+//				tick();
+//				ticks++;	
+//				delta--;
+//			}
+//			if(System.currentTimeMillis() - timer > 1000) {
+//				timer += 1000;
+//				ticks = 0;
+//			}
+//		}
+//		stop();
+	}
+	
+	public void tick() {
+		Logger.log(mouseManager.getMouseX() + " HELLO");
 	}
 	
 	public Display getDisplay() {
